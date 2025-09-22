@@ -1,0 +1,203 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+@layer base {
+  :root {
+    --background: 193% 44% 98%;
+    --foreground: 222.2% 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2% 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2% 84% 4.9%;
+    --primary: 218% 64% 23%;
+    --primary-foreground: 210% 40% 98%;
+    --secondary: 210% 40% 96%;
+    --secondary-foreground: 222.2 84% 4.9%;
+    --muted: 210% 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 193%, 73%, 36%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3% 31.8% 91.4%;
+    --input: 214.3% 31.8% 91.4%;
+    --ring: 222.2% 84% 4.9%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+  }
+}
+
+@layer components {
+  /* Fix for shadcn/ui dialog and popover backgrounds */
+  [data-radix-popper-content-wrapper] {
+    z-index: 50;
+  }
+  
+  [data-state="open"][data-side] {
+    background: white !important;
+    border: 1px solid hsl(var(--border));
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  }
+
+  /* Command dialog specific fixes */
+  [cmdk-root] {
+    background: white !important;
+  }
+  
+  [data-radix-dialog-content] {
+    background: white !important;
+  }
+
+  [cmdk-input] {
+    background: white !important;
+  }
+
+  [cmdk-list] {
+    background: white !important;
+  }
+
+  [cmdk-item] {
+    background: transparent !important;
+  }
+
+  [cmdk-item][data-selected="true"] {
+    background: hsl(210 40% 96%) !important;
+    color: hsl(222.2 84% 4.9%) !important;
+  }
+
+  /* Override shadcn classes that might cause transparency */
+  .bg-popover {
+    background: white !important;
+  }
+
+  .bg-background {
+    background: hsl(193 44% 98%) !important;
+  }
+
+  .bg-accent {
+    background: #19819F;
+  }
+
+  .text-primary {
+    color: #153161;
+  }
+
+  .text-accent {
+    color: #19819F;
+  }
+
+  .border-accent {
+    border-color: #19819F;
+  }
+
+  /* Select dropdown fixes */
+  [data-radix-select-content] {
+    background: white !important;
+    border: 1px solid hsl(214.3 31.8% 91.4%);
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  }
+
+  [data-radix-select-item] {
+    background: transparent !important;
+  }
+
+  [data-radix-select-item][data-highlighted] {
+    background: hsl(210 40% 96%) !important;
+    color: hsl(222.2 84% 4.9%) !important;
+  }
+}
+
+@font-face {
+  font-family: 'Oakes Grotesk';
+  src: url('./assets/fonts/Oakes Grotesk Regular.ttf') format('truetype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Oakes Grotesk';
+  src: url('./assets/fonts/Oakes Grotesk Medium.ttf') format('truetype');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Oakes Grotesk';
+  src: url('./assets/fonts/Oakes Grotesk SemiBold.ttf') format('truetype');
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'Allenoire';
+  src: url('./assets/fonts/FontsFree-Net-Allenoire-Font.ttf') format('truetype');
+  font-weight: 400;
+}
+
+* {
+  font-family: 'Manrope', system-ui, sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6{
+  line-height: 110%;
+  font-weight: 500!important;font-family: 'Oakes Grotesk', system-ui, sans-serif;
+ }
+
+ h1 {
+ font-size: 69px;
+ }
+ 
+ h2 {
+ font-size: 55px;
+ }
+
+ h3 {
+  font-size: 44px;
+ }
+ 
+ h4 {
+  font-size: 35px;
+ }
+ 
+ h5 {
+  font-size: 28px;
+ }
+ 
+ h6 {
+  font-size: 23px;
+ }
+
+ @media only screen and (max-width: 768px) {
+  h1 {
+  font-size: 50px;
+  }
+  
+  h2 {
+  font-size: 42px;
+  }
+
+  h3 {
+    font-size: 34px;
+  }
+  
+  h4 {
+    font-size: 28px;
+  }
+  
+  h5 {
+    font-size: 24px;
+  }
+  
+  h6 {
+    font-size: 20px;
+  }
+}
+
+*{
+  transition-duration: .2s;
+}
